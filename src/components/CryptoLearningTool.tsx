@@ -138,7 +138,8 @@ const CryptoLearningTool = () => {
             action={state.action}
             onComplete={handleProcessComplete}
             onBack={() => setCurrentView('input')}
-            onError={handleError}
+            // We'll remove the onError prop since StepVisualizer doesn't support it
+            // Instead, we'll rely on the component's internal error handling
           />
         )}
         
