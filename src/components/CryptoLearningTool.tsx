@@ -70,10 +70,27 @@ const CryptoLearningTool = () => {
     setCurrentView('select');
   };
 
+  const getBgGradient = () => {
+    if (state.algorithm === 'aes') {
+      return 'from-blue-50 to-indigo-100';
+    } else if (state.algorithm === 'des') {
+      return 'from-emerald-50 to-teal-100';
+    } else if (state.algorithm === 'checksum') {
+      return 'from-amber-50 to-yellow-100';
+    } else {
+      return 'from-slate-50 to-blue-100';
+    }
+  }
+
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className={`container mx-auto px-4 py-8 min-h-screen bg-gradient-to-br ${getBgGradient()}`}>
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
+        <h1 className={`text-4xl font-bold mb-4 ${
+          state.algorithm === 'aes' ? 'text-blue-800' : 
+          state.algorithm === 'des' ? 'text-emerald-800' : 
+          state.algorithm === 'checksum' ? 'text-amber-800' :
+          'text-gray-800'
+        }`}>
           Cryptographic Algorithms Explorer
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -81,7 +98,14 @@ const CryptoLearningTool = () => {
         </p>
       </div>
 
-      <Card className="max-w-6xl mx-auto p-6 bg-white shadow-lg">
+      <Card className={`max-w-6xl mx-auto p-6 bg-white shadow-xl rounded-xl ${
+        currentView === 'visualize' ? 'border-t-4' : ''
+      } ${
+        state.algorithm === 'aes' ? 'border-blue-500' :
+        state.algorithm === 'des' ? 'border-emerald-500' :
+        state.algorithm === 'checksum' ? 'border-amber-500' :
+        ''
+      }`}>
         {currentView === 'select' && (
           <AlgorithmSelector onSelect={handleAlgorithmSelect} />
         )}
@@ -115,8 +139,14 @@ const CryptoLearningTool = () => {
           />
         )}
       </Card>
+      
+      {/* Footer */}
+      <div className="text-center mt-8 text-sm text-gray-500">
+        <p>© 2025 Cryptographic Algorithms Explorer - Educational Tool</p>
+      </div>
     </div>
   );
 };
 
 export default CryptoLearningTool;
+
