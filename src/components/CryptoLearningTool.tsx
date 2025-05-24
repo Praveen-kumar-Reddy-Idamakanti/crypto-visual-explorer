@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import AlgorithmSelector from './AlgorithmSelector';
 import InputPanel from './InputPanel';
@@ -138,8 +137,7 @@ const CryptoLearningTool = () => {
             action={state.action}
             onComplete={handleProcessComplete}
             onBack={() => setCurrentView('input')}
-            // We'll remove the onError prop since StepVisualizer doesn't support it
-            // Instead, we'll rely on the component's internal error handling
+            onError={handleError}
           />
         )}
         
