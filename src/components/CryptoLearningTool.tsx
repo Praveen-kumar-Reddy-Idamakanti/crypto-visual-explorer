@@ -5,6 +5,7 @@ import InputPanel from './InputPanel';
 import StepVisualizer from './StepVisualizer';
 import ResultsDisplay from './ResultsDisplay';
 import { Card } from "@/components/ui/card";
+import { useToast } from "@/components/ui/use-toast";
 
 export type Algorithm = 'aes' | 'des' | 'checksum';
 export type Action = 'encrypt' | 'decrypt' | 'both';
@@ -29,7 +30,7 @@ const CryptoLearningTool = () => {
     result: '',
     isProcessing: false
   });
-
+  const { toast } = useToast();
   const [currentView, setCurrentView] = useState<'select' | 'input' | 'visualize' | 'results'>('select');
 
   const handleAlgorithmSelect = (algorithm: Algorithm) => {
@@ -68,6 +69,18 @@ const CryptoLearningTool = () => {
       isProcessing: false
     });
     setCurrentView('select');
+  };
+
+  const handleError = (error: Error) => {
+    console.error("Crypto processing error:", error);
+    toast({
+      title: "Error Processing",
+      description: `There was an error: ${error.message}. Please try a different input or algorithm.`,
+      variant: "destructive"
+    });
+    setState(prev => ({ ...prev, isProcessing: false }));
+    // Return to the input selection on error
+    setCurrentView('input');
   };
 
   const getBgGradient = () => {
@@ -125,6 +138,7 @@ const CryptoLearningTool = () => {
             action={state.action}
             onComplete={handleProcessComplete}
             onBack={() => setCurrentView('input')}
+            onError={handleError}
           />
         )}
         
@@ -149,4 +163,3 @@ const CryptoLearningTool = () => {
 };
 
 export default CryptoLearningTool;
-
