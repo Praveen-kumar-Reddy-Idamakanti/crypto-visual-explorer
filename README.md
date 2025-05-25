@@ -1,73 +1,92 @@
-# Welcome to your Lovable project
+# Crypto Analyzer
 
-## Project info
+A modern, interactive web application for analyzing and visualizing cryptographic algorithms with real-time feedback and educational insights.
 
-**URL**: https://lovable.dev/projects/a81c5a91-2e15-40ea-8a7a-d119149e4652
+## 🎯 Features
 
-## How can I edit this code?
+- **Interactive Algorithm Visualization**: Watch cryptographic processes unfold step by step
+- **Real-time Analysis**: See immediate results as you input data
+- **Multiple Algorithm Support**: Explore various cryptographic techniques
+- **Educational Interface**: Learn cryptography through visual representation
+- **Modern UI Components**: Built with shadcn-ui for a sleek user experience
+- **Responsive Design**: Works seamlessly across all devices
 
-There are several ways of editing your application.
+## 🛠️ Technology Stack
 
-**Use Lovable**
+- **Frontend Framework**: React with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn-ui
+- **Package Manager**: Bun
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a81c5a91-2e15-40ea-8a7a-d119149e4652) and start prompting.
+## 📦 Prerequisites
 
-Changes made via Lovable will be committed automatically to this repo.
+- Node.js (v18 or higher)
+- Bun (latest version)
 
-**Use your preferred IDE**
+## 🚀 Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd crypto-analyzer
 ```
 
-**Edit a file directly in GitHub**
+2. Install dependencies:
+```bash
+bun install
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. Start the development server:
+```bash
+bun dev
+```
 
-**Use GitHub Codespaces**
+The application will be available at `http://localhost:5173`
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📁 Project Structure
 
-## What technologies are used for this project?
+```
+crypto-analyzer/
+├── src/                   # Source code
+│   ├── components/        # React components
+│   │   ├── crypto/       # Cryptography-specific components
+│   │   └── ui/          # UI components (shadcn-ui)
+│   ├── hooks/            # Custom React hooks
+│   ├── lib/              # Utility functions
+│   └── pages/            # Application pages
+├── public/               # Static assets
+└── ...config files
+```
 
-This project is built with:
+## 🔧 Available Scripts
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- `bun dev` - Start development server
+- `bun build` - Build for production
+- `bun preview` - Preview production build
+- `bun lint` - Lint the codebase
 
-## How can I deploy this project?
+## 🎨 UI Components
 
-Simply open [Lovable](https://lovable.dev/projects/a81c5a91-2e15-40ea-8a7a-d119149e4652) and click on Share -> Publish.
+The project uses shadcn-ui components for a consistent and modern user interface. Components include:
+- Interactive forms and inputs
+- Dynamic visualizations
+- Responsive layout elements
+- Modern navigation components
 
-## Can I connect a custom domain to my Lovable project?
+## 🤝 Contributing
 
-Yes, you can!
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📜 License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- Thanks to the shadcn-ui team for the amazing component library
+- The React and Vite communities for excellent documentation and support
