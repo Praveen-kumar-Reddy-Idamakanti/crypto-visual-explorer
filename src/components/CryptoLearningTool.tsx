@@ -78,7 +78,6 @@ const CryptoLearningTool = () => {
       variant: "destructive"
     });
     setState(prev => ({ ...prev, isProcessing: false }));
-    // Return to the input selection on error
     setCurrentView('input');
   };
 
@@ -137,7 +136,6 @@ const CryptoLearningTool = () => {
             action={state.action}
             onComplete={handleProcessComplete}
             onBack={() => setCurrentView('input')}
-            onError={handleError}
           />
         )}
         
